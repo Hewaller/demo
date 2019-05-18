@@ -28,16 +28,13 @@ export default {
 }
 </script>
 
-<style scoped>
-.k-btn {
-  margin: 5px;
-}
+<style scoped lang='scss'>
 .btn {
   margin: 10px;
   padding: 10px;
   border-radius: 5px;
-}
-a {
-  color: #f8f8f8;
+  a {
+    color: #f8f8f8;
+  }
 }
 </style>

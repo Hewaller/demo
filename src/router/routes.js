@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Home from '../views/Home.vue'
-import Test from '../views/Home.vue'
+import Test from '../views/test.vue'
 const isDev = process.env.NODE_ENV === 'development'
 
 const routes = [
