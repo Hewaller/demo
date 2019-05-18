@@ -1,18 +1,43 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="center-flex column-flex">
+    <button
+      class="btn"
+      v-for="item in routeData"
+      :key="item.name"
+      @click="$router.push(item.name)"
+    >{{item.meta && item.meta.title || item.name}}</button>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import routes from '@/router/routes'
 
 export default {
-  name: 'home',
   components: {
-    HelloWorld
+  },
+  data() {
+    return {
+      data: routes
+    }
+  },
+  computed: {
+    routeData() {
+      return this.data.filter(item => item.name && !['debug'].includes(item.name))
+    }
   }
 }
 </script>
+
+<style scoped>
+.k-btn {
+  margin: 5px;
+}
+.btn {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+a {
+  color: #f8f8f8;
+}
+</style>
