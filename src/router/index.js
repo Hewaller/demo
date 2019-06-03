@@ -5,8 +5,6 @@ import NProgress from 'nprogress' // 顶部进度条
 
 import Routes from './routes'
 
-// 实例化统计
-
 NProgress.configure({ showSpinner: false }) // 配置进度条，去除进度条loading
 
 Vue.use(Router)
@@ -24,15 +22,14 @@ const router = new Router({
 // 路由声明周期
 router.beforeEach(async (to, from, next) => {
   NProgress.start() // 顶部进度条开始
-  // 登陆
-  console.log(to, from)
+  // 登陆逻辑
+  // console.log(to, from)
   next()
 })
 
 router.afterEach(route => {
   // 设置路由title
-  document.title = 'demo'
-
+  document.title = route.meta && route.meta.title ? route.meta.title : 'demo'
   NProgress.done()
 })
 

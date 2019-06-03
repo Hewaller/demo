@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    // 配置JavaScript语言支持
+    "baseUrl": ".",
+    // 使用别名，引用后自动提示路径
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "allowSyntheticDefaultImports": true,
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"]
+}
