@@ -1,5 +1,8 @@
 <template>
-  <div></div>
+  <div class="box">
+    <p class="animate">1文字滚动的内容1</p>
+    <p class="animate">2文字滚动的内容2</p>
+  </div>
 </template>
 
 <script>
@@ -28,5 +31,47 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  width: 300px;
+  margin: 0 auto;
+  border: 1px solid #ff6700;
+  overflow: hidden;
+}
+
+.animate {
+  padding-left: 20px;
+  font-size: 12px;
+  color: #000;
+  display: inline-block;
+  white-space: nowrap;
+  animation: 10s wordsLoop linear infinite normal;
+}
+
+@keyframes wordsLoop {
+  0% {
+    transform: translateX(200px);
+    -webkit-transform: translateX(200px);
+  }
+  100% {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes wordsLoop {
+  0% {
+    transform: translateX(200px);
+    -webkit-transform: translateX(200px);
+  }
+  100% {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+  }
+}
 </style>
