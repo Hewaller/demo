@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Home from "@/views/Home";
 import TextScroll from "@/views/TextScroll.vue";
-import Sort from "@/views/sort";
+import Sort from "@/views/Sort";
 const isDev = process.env.NODE_ENV === "development";
 
 const routes = [
