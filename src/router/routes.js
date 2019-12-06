@@ -1,41 +1,42 @@
-import Vue from 'vue'
-import Home from '@/views/Home'
-import Test from '@/views/test.vue'
-import Sort from '@/views/sort'
-const isDev = process.env.NODE_ENV === 'development'
+import Vue from "vue";
+import Home from "@/views/Home";
+import TextScroll from "@/views/TextScroll.vue";
+import Sort from "@/views/sort";
+const isDev = process.env.NODE_ENV === "development";
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
+    path: "/",
+    name: "home",
     component: Home
   },
   {
-    path: '/about',
-    name: 'about',
-    component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
+    path: "/scroll",
+    name: "scroll",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "@/views/Scroll.vue")
   },
   {
-    path: '/sort',
-    name: 'sort',
+    path: "/sort",
+    name: "sort",
     component: Sort,
     meta: {
-      title: '数组排序'
+      title: "数组排序"
     }
   }
-]
+];
 
 if (isDev) {
   // 开发环境引入测试页面
   routes.push({
-    path: '/test',
-    name: 'test',
+    path: "/textScroll",
+    name: "textScroll",
     meta: {
-      title: 'test',
+      title: "textScroll",
       needLogin: true
     },
-    component: Test
-  })
+    component: TextScroll
+  });
 }
 
-export default routes
+export default routes;
