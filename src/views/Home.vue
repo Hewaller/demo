@@ -5,30 +5,34 @@
       v-for="item in routeData"
       :key="item.name"
       @click="$router.push(item.name)"
-    >{{item.meta && item.meta.title || item.name}}</button>
+    >
+      {{ (item.meta && item.meta.title) || item.name }}
+    </button>
   </div>
 </template>
 
 <script>
-import routes from '@/router/routes'
+import routes from "@/router/routes";
 
 export default {
-  components: {
-  },
+  components: {},
   data() {
     return {
       data: routes
-    }
+    };
   },
   computed: {
     routeData() {
-      return this.data.filter(item => item.name && !['debug'].includes(item.name))
+      return this.data.filter(
+        item => item.name && !["debug"].includes(item.name)
+      );
     }
-  }
-}
+  },
+  methods: {}
+};
 </script>
 
-<style scoped lang='scss'>
+<style scoped lang="scss">
 .btn {
   margin: 10px;
   padding: 10px;

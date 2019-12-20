@@ -2,6 +2,10 @@
   <div>
     <div v-for="(item, index) in arr" :key="index">{{ item }}</div>
     <button @click="sort">排序</button>
+
+    <button @click="close">
+      关闭
+    </button>
   </div>
 </template>
 
@@ -12,7 +16,17 @@ export default {
       arr: [12, 34, 12, 34]
     };
   },
+  mounted() {
+    window.opener = window;
+    console.log(window.opener);
+  },
   methods: {
+    close() {
+      // window.opener = window;
+      // window.open("", "_self", "");
+      // console.log(window.opener);
+      window.close();
+    },
     sort() {
       // this.arr = this.indexOf(this.arr)
       // this.arr = this.sortUnique(this.arr)
