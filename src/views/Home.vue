@@ -1,12 +1,8 @@
 <template>
   <div class="center-flex column-flex">
-    <button
-      class="btn"
-      v-for="item in routeData"
-      :key="item.name"
-      @click="$router.push(item.name)"
-    >
+    <button class="btn" v-for="item in routeData" :key="item.name" @click="$router.push(item.name)">
       {{ (item.meta && item.meta.title) || item.name }}
+      <!-- test -->
     </button>
   </div>
 </template>
